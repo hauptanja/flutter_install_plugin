@@ -2,7 +2,7 @@ group 'com.example.installplugin'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.9.22'
+    ext.kotlin_version = '1.7.22'
     
     repositories {
         google()
@@ -10,7 +10,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.3.0'
+        classpath 'com.android.tools.build:gradle:8.3.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -26,7 +26,8 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 28
+    compileSdk 34
+    
     namespace "com.example.installplugin"
     
     sourceSets {
@@ -39,8 +40,17 @@ android {
     lintOptions {
         disable 'InvalidPackage'
     }
+    // kotlinOptions {
+    //     jvmTarget = "1.8"  // Ensure it matches Java version (1.8)
+    // }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
     kotlinOptions {
-        jvmTarget = "1.8"  // Ensure it matches Java version (1.8)
+        jvmTarget = 17
     }
 }
 
