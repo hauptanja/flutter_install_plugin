@@ -26,7 +26,8 @@ apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 28
-
+    namespace "com.example.installplugin"
+    
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
