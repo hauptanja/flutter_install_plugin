@@ -2,7 +2,7 @@ group 'com.example.installplugin'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.7.10'
+    ext.kotlin_version = '2.0.10'
     repositories {
         google()
         mavenCentral()
@@ -37,6 +37,9 @@ android {
     }
     lintOptions {
         disable 'InvalidPackage'
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"  // Ensure it matches Java version (1.8)
     }
 }
 
