@@ -2,8 +2,9 @@ group 'com.example.installplugin'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.7.22'
-    
+//    ext.kotlin_version = '1.7.22'
+    ext.kotlin_version = '1.9.22'
+
     repositories {
         google()
         mavenCentral()
@@ -40,18 +41,20 @@ android {
     lintOptions {
         disable 'InvalidPackage'
     }
-    // kotlinOptions {
-    //     jvmTarget = "1.8"  // Ensure it matches Java version (1.8)
-    // }
+     kotlinOptions {
+         jvmTarget = "1.8"  // Ensure it matches Java version (1.8)
+     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
+//        sourceCompatibility JavaVersion.VERSION_17
+//        targetCompatibility JavaVersion.VERSION_17
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
-    kotlinOptions {
-        jvmTarget = 17
-    }
+//    kotlinOptions {
+//        jvmTarget = 17
+//    }
 }
 
 dependencies {
